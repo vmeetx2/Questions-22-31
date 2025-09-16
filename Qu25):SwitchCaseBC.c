@@ -1,19 +1,19 @@
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
+int main() {
+    long long a, b;
+    char op;
 
-int main()
-{
-    long long a, b; char op;
-    if (!(cin >> a >> op >> b)) return 0;
+    if (scanf("%lld %c %lld", &a, &op, &b) != 3) return 0;
 
     switch (op) {
-        case '+': cout << a + b; break;
-        case '-': cout << a - b; break;
-        case '*': cout << a * b; break;
-        case '/': cout << (b ? a / b : 0); break; #accounted for switch case of b =0 or not 
-        case '%': cout << (b ? a % b : 0); break; # same here, kept else output 0 
-        default: cout << 0;
-      
+        case '+': printf("%lld", a + b); break;
+        case '-': printf("%lld", a - b); break;
+        case '*': printf("%lld", a * b); break;
+        case '/': printf("%lld", b ? a / b : 0); break; 
+        case '%': printf("%lld", b ? a % b : 0); break; 
+        default: printf("0");
     }
+
+    return 0;
 }
